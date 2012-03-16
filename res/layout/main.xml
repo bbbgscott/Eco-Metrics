@@ -15,9 +15,9 @@
 		android:paddingTop="52dip"
         />
 <Button
-		android:text="Log In"
+		android:text="Configure"
 		android:layout_height="wrap_content"
-		android:id="@+id/button1"
+		android:id="@+id/configButt"
 		android:layout_width="match_parent"
 		android:layout_marginLeft="20dip"
 		android:layout_marginRight="20dip"
@@ -32,12 +32,31 @@
 </Button>
 
 <Button 
-		android:text="About"
+		android:text="Metrics"
 		android:layout_height="wrap_content"
-		android:id="@+id/button2"
+		android:id="@+id/metricsButt"
 		android:layout_width="match_parent"
-		android:layout_margin="20dip"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip"
+		android:layout_marginTop="15dip"
+		android:layout_marginBottom="0dip"
 		android:background="#336699"
+		android:textColor="#FFFFFF"
+		android:padding="10dip"
+		android:textStyle="bold"
+		android:textSize="20dip"		
+		>
+</Button>
+<Button 
+		android:text="Contact Us"
+		android:layout_height="wrap_content"
+		android:id="@+id/contactButt"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip"
+		android:layout_marginTop="15dip"
+		android:layout_marginBottom="0dip"
+		android:background="#33CC33"
 		android:textColor="#FFFFFF"
 		android:padding="10dip"
 		android:textStyle="bold"
