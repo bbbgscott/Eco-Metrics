@@ -7,7 +7,7 @@
     >
     
     <TextView
-        android:text="Configure"
+        android:text="Configure your data"
         android:id="@+id/configTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

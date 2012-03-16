@@ -18,7 +18,7 @@
 		android:textColor="#444444"
     ></TextView>
      <TextView
-        android:text="This is just a small portion of what is possible on EcoMetrics.net!\nContact us to find out more information on our full product features and how you can get started with EcoMetrics."
+        android:text="This is just a small portion of what is possible on EcoMetrics.net!\nContact us to find out more information on our full product features and how you can get started with EcoMetrics.\n\nContact us for a free demo!"
         android:id="@+id/contactBlurb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
     <Button 
 		android:text="Visit EcoMetrics.net"
 		android:layout_height="wrap_content"
-		android:id="@+id/contactButt"
+		android:id="@+id/urlButt"
 		android:layout_width="match_parent"
 		android:layout_marginLeft="20dip"
 		android:layout_marginRight="20dip"
