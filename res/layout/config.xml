@@ -25,14 +25,27 @@
         android:layout_gravity="center_horizontal|bottom"
 		android:paddingTop="52dip"
         />
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFFFFF" 
+    android:background="#EEEEEE" 
+    android:layout_margin="10dip"
     >        
         
-</LinearLayout>
+        <TextView
+        android:text="In this view we will explain how Eco Metric works and how to add data into various fields etc...."
+        android:id="@+id/configTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="15dip"
+		android:textSize="15dip"
+		android:textColor="#222222"
+    ></TextView>
+        
+        
+</FrameLayout>
 <Button 
 		android:text="Start adding data"
 		android:layout_height="wrap_content"
