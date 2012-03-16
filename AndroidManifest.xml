@@ -14,5 +14,8 @@
             </intent-filter>
         </activity>
 		<activity android:name=".contacts"></activity>
+		<activity android:name=".metrics"></activity>
+		<activity android:name=".data"></activity>
+		<activity android:name=".config"></activity>
     </application>
 </manifest>
