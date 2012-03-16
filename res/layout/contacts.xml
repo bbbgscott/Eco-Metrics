@@ -34,11 +34,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
 		android:padding="15dip"
+		android:layout_marginLeft="80dip"
+		android:layout_marginRight="80dip"
 		android:textSize="15dip"
 		android:textStyle="bold"
 		android:textColor="#444444"
 		android:background="#EEEEEE"
-		android:autoLink="phone"
 		
     ></TextView>
     <TextView
@@ -47,7 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-		android:padding="15dip"
+		android:paddingBottom="15dip"
+		android:paddingLeft="15dip"
+		android:layout_marginLeft="80dip"
+		android:layout_marginRight="80dip"
 		android:textSize="15dip"
 		android:textStyle="bold"
 		android:textColor="#444444"
