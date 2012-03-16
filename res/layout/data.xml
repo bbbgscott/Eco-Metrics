@@ -2,21 +2,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:id="@+id/tabhost"
     android:orientation="vertical"
     android:background="#FFFFFF" 
     >
     
     <TextView
-        android:text="Input Data"
-        android:id="@+id/dataTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/chooseMetric"
+    />
+    
+    <Spinner
+        android:prompt="@string/chooseMetric"
+        android:id="@+id/metricSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
 		android:padding="5dip"
-		android:textSize="25dip"
-		android:textStyle="bold"
 		android:textColor="#444444"
-    ></TextView>
+    />
     
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/chooseLocation"
+    />
+    
+    <Spinner
+        android:prompt="@string/chooseLocation"
+        android:id="@+id/locationSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textColor="#444444"
+    />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/chooseMonth"
+    />
+    
+    <Spinner
+        android:prompt="@string/chooseMonth"
+        android:id="@+id/monthSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textColor="#444444"
+    />
 
 </LinearLayout>

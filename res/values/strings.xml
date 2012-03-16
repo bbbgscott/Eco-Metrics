@@ -2,9 +2,35 @@
 <resources>
     <string name="hello">Hello World, main!</string>
     <string name="app_name">Eco Metrics</string>
-<<<<<<< HEAD
-    <string name="copyright">Copyright 2012 Eco-Metrics. All rights reserved.</string>
-=======
     <string name="copyright">Copyright 2012 Eco Metrics. All rights reserved.</string>
->>>>>>> 21ff8393801df434543fbf7b7a0fef3b858b4187
+    
+    <string name="chooseMetric">Choose a metric</string>
+    <string-array name="metricArray">
+        <item>Electricity</item>
+        <item>Water</item>
+        <item>Garbage</item>
+        <item>Green House Gasses</item>
+    </string-array>
+    
+    <string name="chooseLocation">Choose a location</string>
+    <string-array name="locationArray">
+        <item>Office</item>
+        <item>Warehouse</item>
+    </string-array>
+    
+    <string name="chooseMonth">Choose a month</string>
+    <string-array name="monthArray">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 </resources>
