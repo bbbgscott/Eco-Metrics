@@ -18,4 +18,6 @@ public class data extends Activity {
         //t = (TextView) findViewById(R.id.Text);
         
     }
+    
+    
 }
