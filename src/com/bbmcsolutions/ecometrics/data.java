@@ -13,7 +13,7 @@ public class data extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contacts);
+        setContentView(R.layout.data);
         
         //t = (TextView) findViewById(R.id.Text);
         

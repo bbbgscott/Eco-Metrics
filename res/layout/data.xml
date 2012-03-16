@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF" 
+    >
+    
+    <TextView
+        android:text="Input Data"
+        android:id="@+id/dataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textSize="25dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+    ></TextView>
+    
+
+</LinearLayout>
