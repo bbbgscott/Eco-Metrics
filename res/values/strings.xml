@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, main!</string>
     <string name="app_name">Eco Metrics</string>
+    <string name="copyright">Copyright 2012 Ecometrics. All rights reserved.</string>
 </resources>
