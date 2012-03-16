@@ -12,7 +12,9 @@ public class main extends Activity {
     /** Called when the activity is first created. */
 	
 	ImageView image;
-	Button button;
+	Button metricsButt;
+	Button configButt;
+	Button contactButt;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,21 +24,23 @@ public class main extends Activity {
         image = (ImageView) findViewById(R.id.imageView1);
         
         final Button configButt = (Button) findViewById(R.id.configButt);
-        button.setOnClickListener(new View.OnClickListener() {
+        configButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                
+            	Intent myIntent = new Intent(v.getContext(), config.class);
+                startActivityForResult(myIntent, 0);
             }
         });
         
         //if there is no data then this button will be hidden
-        final Button button = (Button) findViewById(R.id.metricsButt);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button metricsButt = (Button) findViewById(R.id.metricsButt);
+        metricsButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d("clicked", "msg");
+            	Intent myIntent = new Intent(v.getContext(), metrics.class);
+                startActivityForResult(myIntent, 0);
             }
         });
         final Button contactButt = (Button) findViewById(R.id.contactButt);
-        button.setOnClickListener(new View.OnClickListener() {
+        contactButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Intent myIntent = new Intent(v.getContext(), contacts.class);
                 startActivityForResult(myIntent, 0);
