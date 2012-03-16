@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF" 
+    >
+    
+    <TextView
+        android:text="Configure your data"
+        android:id="@+id/configTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textSize="25dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+    ></TextView>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/banner_reports"
+        android:layout_gravity="center_horizontal|bottom"
+		android:paddingTop="52dip"
+        />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#EEEEEE" 
+    android:layout_margin="10dip"
+    >        
+        
+        <TextView
+        android:text="In this view we will explain how Eco Metric works and how to add data into various fields etc...."
+        android:id="@+id/configTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="15dip"
+		android:textSize="15dip"
+		android:textColor="#222222"
+    ></TextView>
+        
+        
+</FrameLayout>
+<Button 
+		android:text="Start adding data"
+		android:layout_height="wrap_content"
+		android:id="@+id/addFieldButt"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip"
+		android:layout_marginTop="15dip"
+		android:layout_marginBottom="0dip"
+		android:background="@layout/buttonshape"
+		android:textColor="#FFFFFF"
+		android:padding="10dip"
+		android:textStyle="bold"
+		android:textSize="20dip"		
+		>
+</Button>
+</LinearLayout>
