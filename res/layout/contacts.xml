@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
 		android:paddingTop="52dip"
+		android:textColor="#000000"
     ></TextView>
     
 
