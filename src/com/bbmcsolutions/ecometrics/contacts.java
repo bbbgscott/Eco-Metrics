@@ -15,7 +15,7 @@ public class contacts extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contacts);
         
-        t = (TextView) findViewById(R.id.contactsText);
+        t = (TextView) findViewById(R.id.contactTitle);
         
     }
 }

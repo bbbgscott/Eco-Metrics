@@ -7,13 +7,72 @@
     >
     
     <TextView
-        android:text="With the full version of Eco-Metrics, yadda yadda yadda..."
-        android:id="@+id/contactsText"
+        android:text="Contact Us"
+        android:id="@+id/contactTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|top"
-		android:paddingTop="52dip"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textSize="25dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
     ></TextView>
+     <TextView
+        android:text="This is just a small portion of what is possible on EcoMetrics.net!\nContact us to find out more information on our full product features and how you can get started with EcoMetrics."
+        android:id="@+id/contactBlurb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="25dip"
+		android:textSize="15dip"
+		android:textColor="#444444"
+    ></TextView>   
+    <TextView
+        android:text="P.O. Box 1135\nCapitola, CA 95010"
+        android:id="@+id/contactAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+		android:padding="15dip"
+		android:textSize="15dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+		android:background="#EEEEEE"
+		android:autoLink="phone"
+		
+    ></TextView>
+    <TextView
+        android:text="(831) 824-4102 "
+        android:id="@+id/contactAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+		android:padding="15dip"
+		android:textSize="15dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+		android:background="#EEEEEE"
+		android:autoLink="phone"
+		
+    ></TextView>    
+    <Button 
+		android:text="Visit EcoMetrics.net"
+		android:layout_height="wrap_content"
+		android:id="@+id/contactButt"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip"
+		android:layout_marginTop="15dip"
+		android:layout_marginBottom="0dip"
+		android:background="#33CC33"
+		android:textColor="#FFFFFF"
+		android:padding="10dip"
+		android:textStyle="bold"
+		android:textSize="20dip"		
+		>
+</Button>
+    
+    <TextView android:gravity="center_horizontal|bottom" android:padding="10dip" android:text="@string/copyright" android:id="@+id/textView1" android:layout_width="match_parent" android:layout_height="match_parent"></TextView>
     
 
 </LinearLayout>

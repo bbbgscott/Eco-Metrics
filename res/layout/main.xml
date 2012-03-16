@@ -65,7 +65,7 @@
 </Button>
 
 
-<TextView android:gravity="bottom" android:padding="10dip" android:text="@string/copyright" android:id="@+id/textView1" android:layout_width="match_parent" android:layout_height="match_parent"></TextView>
+<TextView android:gravity="center_horizontal|bottom" android:padding="10dip" android:text="@string/copyright" android:id="@+id/textView1" android:layout_width="match_parent" android:layout_height="match_parent"></TextView>
     
     
 </LinearLayout>

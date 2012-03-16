@@ -39,6 +39,7 @@ public class main extends Activity {
                 startActivityForResult(myIntent, 0);
             }
         });
+        
         final Button contactButt = (Button) findViewById(R.id.contactButt);
         contactButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

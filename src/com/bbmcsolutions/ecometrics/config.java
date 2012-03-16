@@ -13,9 +13,9 @@ public class config extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contacts);
+        setContentView(R.layout.config);
         
-        t = (TextView) findViewById(R.id.contactsText);
+        t = (TextView) findViewById(R.id.configTitle);
         
     }
 }
