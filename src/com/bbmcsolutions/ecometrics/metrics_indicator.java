@@ -219,7 +219,7 @@ public class metrics_indicator extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
         	View v;
-        	View tv;
+        	TextView tv, tv2;
         	SmartImageView myImage;
         	String imgUrl;
         	Double wareTot;
@@ -230,10 +230,17 @@ public class metrics_indicator extends FragmentActivity {
         	{
         	case 0:
                 v = inflater.inflate(R.layout.electricity, container, false);
-                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 wareTot = getWareHouseTotal(mNum);
                 officeTot = getOfficeTotal(mNum);
                 max = wareTot+officeTot;
+                tv = (TextView)v.findViewById(R.id.elecleg1);
+                tv2 = (TextView)v.findViewById(R.id.elecleg2);
+                if(max != 0)
+                {
+		            tv.append(wareTot.toString());
+		            tv2.append(officeTot.toString());
+                }
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 
                 
                 imgUrl = "http://chart.apis.google.com/chart" +
@@ -246,15 +253,29 @@ public class metrics_indicator extends FragmentActivity {
                 
                 if(max!=0)
                 	myImage.setImageUrl(imgUrl);
-                else
-                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
+                else if(wareTot == 0 && officeTot != 0)
+                	tv.append("Needs more info");
+                else if(officeTot == 0 && wareTot !=0)
+                	tv2.append("Needs more info");
+                else if(officeTot == 0 && wareTot == 0)
+                {
+                	tv.append("Needs more info");
+                	tv2.append("Needs more info");
+                }
                 return v;
         	case 1:
         		v = inflater.inflate(R.layout.propane, container, false);
-                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 wareTot = getWareHouseTotal(mNum);
                 officeTot = getOfficeTotal(mNum);
                 max = wareTot+officeTot;
+                tv = (TextView)v.findViewById(R.id.propleg1);
+                tv2 = (TextView)v.findViewById(R.id.propleg2);
+                if(max != 0)
+                {
+		            tv.append(wareTot.toString());
+		            tv2.append(officeTot.toString());
+                }
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 
                 imgUrl = "http://chart.apis.google.com/chart" +
           			   "?chs=700x425" +
@@ -266,15 +287,29 @@ public class metrics_indicator extends FragmentActivity {
                 
                 if(max!=0)
                 	myImage.setImageUrl(imgUrl);
-                else
-                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
+                else if(wareTot == 0 && officeTot != 0)
+                	tv.append("Needs more info");
+                else if(officeTot == 0 && wareTot !=0)
+                	tv2.append("Needs more info");
+                else if(officeTot == 0 && wareTot == 0)
+                {
+                	tv.append("Needs more info");
+                	tv2.append("Needs more info");
+                }
                 return v;
         	case 2:
         		v = inflater.inflate(R.layout.natural, container, false);
-                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 wareTot = getWareHouseTotal(mNum);
                 officeTot = getOfficeTotal(mNum);
                 max = wareTot+officeTot;
+                tv = (TextView)v.findViewById(R.id.natleg1);
+                tv2 = (TextView)v.findViewById(R.id.natleg2);
+                if(max != 0)
+                {
+		            tv.append(wareTot.toString());
+		            tv2.append(officeTot.toString());
+                }
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 
                 
                 imgUrl = "http://chart.apis.google.com/chart" +
@@ -287,8 +322,15 @@ public class metrics_indicator extends FragmentActivity {
                 
                 if(max!=0)
                 	myImage.setImageUrl(imgUrl);
-                else
-                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
+                else if(wareTot == 0 && officeTot != 0)
+                	tv.append("Needs more info");
+                else if(officeTot == 0 && wareTot !=0)
+                	tv2.append("Needs more info");
+                else if(officeTot == 0 && wareTot == 0)
+                {
+                	tv.append("Needs more info");
+                	tv2.append("Needs more info");
+                }
                 return v;
         	case 3:
         		v = inflater.inflate(R.layout.gasoline, container, false);
@@ -296,6 +338,14 @@ public class metrics_indicator extends FragmentActivity {
                 wareTot = getWareHouseTotal(mNum);
                 officeTot = getOfficeTotal(mNum);
                 max = wareTot+officeTot;
+                tv = (TextView)v.findViewById(R.id.gasleg1);
+                tv2 = (TextView)v.findViewById(R.id.gasleg2);
+                if(max != 0)
+                {
+		            tv.append(wareTot.toString());
+		            tv2.append(officeTot.toString());
+                }
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
                 
                 
                 imgUrl = "http://chart.apis.google.com/chart" +
@@ -308,8 +358,15 @@ public class metrics_indicator extends FragmentActivity {
                 
                 if(max!=0)
                 	myImage.setImageUrl(imgUrl);
-                else
-                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
+                else if(wareTot == 0 && officeTot != 0)
+                	tv.append("Needs more info");
+                else if(officeTot == 0 && wareTot !=0)
+                	tv2.append("Needs more info");
+                else if(officeTot == 0 && wareTot == 0)
+                {
+                	tv.append("Needs more info");
+                	tv2.append("Needs more info");
+                }
                 return v;
         	}
         	return null;

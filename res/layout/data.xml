@@ -1,193 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tabhost"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
     android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/dataTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:padding="5dip"
-        android:text="Enter your data"
-        android:textColor="#444444"
-        android:textSize="25dip"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginTop="10dip"
-        android:text="@string/chooseMetric"
-        android:textColor="#333"
-        android:textSize="15dip"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/metricSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:prompt="@string/chooseMetric"
-        android:textColor="#444444" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginTop="10dip"
-        android:text="@string/chooseLocation"
-        android:textColor="#333"
-        android:textSize="15dip"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/locationSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:prompt="@string/chooseLocation"
-        android:textColor="#444444" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginTop="10dip"
-        android:text="@string/chooseMonth"
-        android:textColor="#333"
-        android:textSize="15dip"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/monthSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:prompt="@string/chooseMonth"
-        android:textColor="#444444" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginTop="10dip"
-        android:textColor="#333"
-        android:textSize="15dip"
-        android:textStyle="bold" 
-        android:text="@string/chooseConsumption"/>
-      
-
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        
-            <EditText
-        android:id="@+id/consumptionEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:gravity="top|left"
-        android:inputType="number|numberDecimal"
-        android:width="150dip" />
-        
-        <TextView
-        android:id="@+id/unit_label"
-        android:layout_width="50dip"
-        android:layout_height="wrap_content"
-        android:text="@string/unit_label"
-        android:layout_marginLeft="175dip"
-        android:layout_marginTop="10dip"
-        android:textSize="20dip"
-         />
-        
-    </RelativeLayout>
-	
-
-    
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:layout_marginTop="10dip"
-        android:textColor="#333"
-        android:textSize="15dip"
-        android:textStyle="bold" 
-        android:text="@string/chooseCost"
-       />
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-    <EditText
-        android:id="@+id/costEditText"
-       android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dip"
-        android:gravity="top|left"
-        android:inputType="number|numberDecimal"
-        android:width="150dip" />
-
-    <TextView
-        android:id="@+id/unit_label"
-        android:layout_width="50dip"
-        android:layout_height="wrap_content"
-        android:text="$"
-        android:layout_marginLeft="175dip"
-        android:layout_marginTop="10dip"
-        android:textSize="20dip"
-         />
-    
-    
-    </RelativeLayout>
     
     <LinearLayout 
-    android:id="@+id/LinearLayout02" 
-    android:layout_height="wrap_content" 
-    android:layout_width="fill_parent" 
-    android:layout_alignParentBottom="true">
-    <Button 
-        android:id="@+id/saveButton" 
-        android:layout_width="wrap_content" 
-        android:layout_height="40dip" 
-        android:layout_weight="1" android:text="Save"
-        android:textColor="#FFFFFF"
-        android:textSize="20dip"
-        android:textStyle="bold"
-        android:background="@layout/buttonshape"
-        android:layout_marginBottom="15dip"
-        android:layout_marginTop="15dip"
-         >
-    </Button>
-    <Button 
-        android:id="@+id/viewButton" 
-        android:layout_width="wrap_content" 
-        android:layout_height="40dip"
-        android:layout_weight="1" android:text="View"
-        android:background="@layout/buttonshape"
-        android:textColor="#FFFFFF"
-        android:textSize="20dip"
-        android:textStyle="bold"
-        android:layout_marginBottom="15dip"
-        android:layout_marginTop="15dip"
-        
-        >
-        
-    </Button>
-</LinearLayout>
+    	android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+    >
 
-</LinearLayout>
+	    <TextView
+	        android:id="@+id/dataTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="top"
+	        android:padding="5dip"
+	        android:text="Enter your data"
+	        android:textColor="#444444"
+	        android:textSize="25dip"
+	        android:textStyle="bold" />
+	
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/chooseMetric"
+	        android:textColor="#333"
+	        android:textSize="15dip"
+	        android:textStyle="bold" />
+	
+	    <Spinner
+	        android:id="@+id/metricSpinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="top|left"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginRight="15dip"
+	        android:prompt="@string/chooseMetric"
+	        android:textColor="#444444" />
+	
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/chooseLocation"
+	        android:textColor="#333"
+	        android:textSize="15dip"
+	        android:textStyle="bold" />
+	
+	    <Spinner
+	        android:id="@+id/locationSpinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="top|left"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginRight="15dip"
+	        android:prompt="@string/chooseLocation"
+	        android:textColor="#444444" />
+	
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/chooseMonth"
+	        android:textColor="#333"
+	        android:textSize="15dip"
+	        android:textStyle="bold" />
+	
+	    <Spinner
+	        android:id="@+id/monthSpinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="top|center"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginRight="15dip"
+	        android:prompt="@string/chooseMonth"
+	        android:textColor="#444444" />
+	
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="10dip"
+	        android:textColor="#333"
+	        android:textSize="15dip"
+	        android:textStyle="bold" 
+	        android:text="@string/chooseConsumption"/>
+	      
+	
+	
+	    <RelativeLayout
+	        android:id="@+id/relativeLayout1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	        
+	            <EditText
+	        android:id="@+id/consumptionEditText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:gravity="top|left"
+	        android:inputType="number|numberDecimal"
+	        android:width="150dip" />
+	        
+	        <TextView
+	        android:id="@+id/unit_label"
+	        android:layout_width="50dip"
+	        android:layout_height="wrap_content"
+	        android:text="@string/unit_label"
+	        android:layout_marginLeft="175dip"
+	        android:layout_marginTop="10dip"
+	        android:textSize="20dip"
+	         />
+	        
+	    </RelativeLayout>
+		
+	
+	    
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="10dip"
+	        android:textColor="#333"
+	        android:textSize="15dip"
+	        android:textStyle="bold" 
+	        android:text="@string/chooseCost"
+	       />
+	
+	    <RelativeLayout
+	        android:id="@+id/relativeLayout2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	
+	    <EditText
+	        android:id="@+id/costEditText"
+	       android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dip"
+	        android:gravity="top|left"
+	        android:inputType="number|numberDecimal"
+	        android:width="150dip" />
+	
+	    <TextView
+	        android:id="@+id/unit_label"
+	        android:layout_width="50dip"
+	        android:layout_height="wrap_content"
+	        android:text="$"
+	        android:layout_marginLeft="175dip"
+	        android:layout_marginTop="10dip"
+	        android:textSize="20dip"
+	         />
+	    
+	    
+	    </RelativeLayout>
+	    
+	    <LinearLayout 
+	    android:id="@+id/LinearLayout02" 
+	    android:layout_height="wrap_content" 
+	    android:layout_width="fill_parent" 
+	    android:layout_alignParentBottom="true">
+	    <Button 
+	        android:id="@+id/saveButton" 
+	        android:layout_width="wrap_content" 
+	        android:layout_height="40dip" 
+	        android:layout_weight="1" android:text="Save"
+	        android:textColor="#FFFFFF"
+	        android:textSize="20dip"
+	        android:textStyle="bold"
+	        android:background="@layout/buttonshape"
+	        android:layout_marginBottom="15dip"
+	        android:layout_marginTop="15dip"
+	         >
+	    </Button>
+	    <Button 
+	        android:id="@+id/viewButton" 
+	        android:layout_width="wrap_content" 
+	        android:layout_height="40dip"
+	        android:layout_weight="1" android:text="View"
+	        android:background="@layout/buttonshape"
+	        android:textColor="#FFFFFF"
+	        android:textSize="20dip"
+	        android:textStyle="bold"
+	        android:layout_marginBottom="15dip"
+	        android:layout_marginTop="15dip"
+	        
+	        >
+	        
+	    </Button>
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>
