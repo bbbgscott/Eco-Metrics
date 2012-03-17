@@ -8,18 +8,35 @@
     >
     
     <TextView
+        android:text="Enter your data"
+        android:id="@+id/dataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:padding="5dip"
+		android:textSize="25dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+    />
+    
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+        android:layout_marginLeft="15dip"
         android:text="@string/chooseMetric"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:textColor="#333"
     />
     <Spinner
         android:prompt="@string/chooseMetric"
         android:id="@+id/metricSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-		android:padding="5dip"
+        android:layout_gravity="top|left"
+		android:layout_marginLeft="15dip"
+		android:layout_marginRight="15dip"
 		android:textColor="#444444"
     />
     
@@ -27,15 +44,20 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+        android:layout_marginLeft="15dip"
         android:text="@string/chooseLocation"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:textColor="#333"
     />
     <Spinner
         android:prompt="@string/chooseLocation"
         android:id="@+id/locationSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-		android:padding="5dip"
+        android:layout_gravity="top|left"
+		android:layout_marginLeft="15dip"
+		android:layout_marginRight="15dip"
 		android:textColor="#444444"
     />
     
@@ -43,15 +65,20 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+        android:layout_marginLeft="15dip"
         android:text="@string/chooseMonth"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:textColor="#333"
     />
     <Spinner
         android:prompt="@string/chooseMonth"
         android:id="@+id/monthSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-		android:padding="5dip"
+		android:layout_marginLeft="15dip"
+		android:layout_marginRight="15dip"
 		android:textColor="#444444"
     />
     
@@ -59,16 +86,19 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+        android:layout_marginLeft="15dip"
         android:text="@string/chooseConsumption"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:textColor="#333"
     />
-
     <EditText
         android:id="@+id/consumptionEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number|numberDecimal"
-        android:gravity="center"
-        android:layout_gravity="center"
+        android:gravity="top|left"
+        android:layout_marginLeft="15dip"
         android:width="150dip"
     />
     
@@ -76,15 +106,19 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
+        android:layout_marginLeft="15dip"
         android:text="@string/chooseCost"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:textColor="#333"
     />
     <EditText
         android:id="@+id/costEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number|numberDecimal"
-        android:gravity="center"
-        android:layout_gravity="center"
+        android:gravity="top|left"
+        android:layout_marginLeft="15dip"
         android:width="150dip"
     />
     
@@ -97,7 +131,7 @@
 		android:layout_marginRight="20dip"
 		android:layout_marginTop="30dip"
 		android:layout_marginBottom="0dip"
-		android:background="@layout/bluebuttonshape"
+		android:background="@layout/buttonshape"
 		android:textColor="#FFFFFF"
 		android:padding="10dip"
 		android:textStyle="bold"
