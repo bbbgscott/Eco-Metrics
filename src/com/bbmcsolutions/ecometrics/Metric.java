@@ -8,64 +8,59 @@ import android.content.Context;
 public class Metric {
 	
 	int _id;
+	String _metric;
+	String _month;
 	String _loc;
-	double _val;
-	int _Type;
+	double _cons;
+	double _cost;
 	
-	public Metric(String loc,double val,int Type)
+	public Metric(String aMetric, String aMonth, String aLoc, double aCons, double aCost)
 	{
-		
-		this._loc=loc;
-		this._val=val;
-		this._Type=Type;
+		this._metric = aMetric;
+		this._loc = aLoc;
+		this._month = aMonth;
+		this._cons = aCons;
+		this._cost = aCost;
 	}
-	
-	public Metric(String loc,double val)
+	public String getMetric()
 	{
-		this._loc=loc;
-		this._val=val;
-	}
-	
-	public int getID()
-	{
-		return this._id;
-	}
-	public void SetID(int ID)
-	{
-		this._id=ID;
-	}
-	
+		return this._metric;
+	}	
 	public String getLoc()
 	{
 		return this._loc;
 	}
-	
-	public double getVal()
+	public String getMonth()
 	{
-		return this._val;
+		return this._month;
+	}
+	public double getCons()
+	{
+		return this._cons;
+	}
+	public double getCost()
+	{
+		return this._cost;
+	}
+	public void setMetric(String aMetric)
+	{
+		this._metric=aMetric;
+	}	
+	public void setLoc(String aLoc)
+	{
+		this._loc=aLoc;
+	}
+	public void setMonth(String aMonth)
+	{
+		this._month=aMonth;
+	}
+	public void setCons(double aCons)
+	{
+		this._cons=aCons;
+	}
+	public void setCost(double aCost)
+	{
+		this._cost=aCost;
 	}
 	
-	public void setLoc(String Name)
-	{
-		this._loc=Name;
-	}
-	public void setVal(int Val)
-	{
-		this._val=Val;
-	}
-	
-	
-	public void setType(int Type)
-	{
-		this._Type=Type;
-	}
-	
-	public String getTypeName(Context con, int Type)
-	{
-		return new DataBaseHelper(con).GetType(Type);
-	}
-	public int getType()
-	{
-		return this._Type;
-	}
 }

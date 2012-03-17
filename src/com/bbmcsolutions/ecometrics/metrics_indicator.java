@@ -14,6 +14,8 @@ import com.loopj.android.image.SmartImageView;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,7 +38,16 @@ public class metrics_indicator extends FragmentActivity {
 	PagerAdapter mPagerAdapter;
     ViewPager  mViewPager;
     metrics mIndicator;
+    static Double officeTotals[] = new Double[4];
+    static Double wareTotals[] = new Double[4];
 	
+    public static Double getWareHouseTotal(int num) {
+    	return wareTotals[num];
+    }
+    public static Double getOfficeTotal(int num) {
+    	return officeTotals[num];
+    }
+    
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -71,6 +82,70 @@ public class metrics_indicator extends FragmentActivity {
 		mIndicator.setArrows(prev, next);
 		
 		mIndicator.setOnClickListener(new OnIndicatorClickListener());
+		
+		SQLiteDatabase metricDB = null;
+    	metricDB = this.openOrCreateDatabase("Metrics", MODE_PRIVATE, null);
+    	String metricsTable = "metricsTable";
+        
+    	
+    	for(int w=0;w<4;w++) {
+    		String m = null;
+    		officeTotals[w]=0.0;
+			wareTotals[w]=0.0;
+    		switch(w) {
+    		case 0:
+    			m="Electricity";
+    			break;
+    		case 1:
+    			m="Propane";
+    			break;
+    		case 2:
+    			m="Natural Gas";
+    			break;
+    		case 3:
+    			m="Gasoline";
+    			break;
+    		}
+        Cursor cur= metricDB.rawQuery("Select * FROM "+metricsTable+ " WHERE metric = '" + m + "'", null);
+        
+        int colMetric = cur.getColumnIndex("metric");
+        int colLoc= cur.getColumnIndex("loc");
+        int colMonth = cur.getColumnIndex("month");
+        int colCons = cur.getColumnIndex("cons");
+        int colCost = cur.getColumnIndex("cost");
+        int colIndex = cur.getColumnIndex("id");
+        Integer in = cur.getCount();
+        Log.d("Location", in.toString());
+		double officeTotal = 0;
+		double wareTotal = 0;
+		if(cur != null){
+			if(cur.getCount() > 0){
+				for(int i = 0; i < cur.getCount()-1; i++){
+					
+					cur.moveToNext();
+					double cons = cur.getDouble(colCons+1);
+										
+					String month = cur.getString(colMonth+1);
+					String loc = cur.getString(colLoc+1);
+					String metric = cur.getString(colMetric+1);
+	
+					if(loc.toUpperCase().equals("OFFICE")) {
+						officeTotal += cons;
+					}
+					else if(loc.toUpperCase().equals("WAREHOUSE")) {
+						wareTotal += cons;
+					}		
+				}
+				
+				officeTotals[w]=officeTotal;
+				wareTotals[w]=wareTotal;
+				
+				
+			}
+		}
+		cur.close();
+    	}			
+		metricDB.close();
 		
     }
 	
@@ -134,7 +209,6 @@ public class metrics_indicator extends FragmentActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             mNum = getArguments() != null ? getArguments().getInt("num") : 1;
-            Toast.makeText(getActivity(), "mNum = "+mNum, Toast.LENGTH_SHORT).show();
         }
 
         /**
@@ -146,36 +220,96 @@ public class metrics_indicator extends FragmentActivity {
                 Bundle savedInstanceState) {
         	View v;
         	View tv;
-        	ImageView imgView;
+        	SmartImageView myImage;
+        	String imgUrl;
+        	Double wareTot;
+            Double officeTot;
+            Double max;
         	
         	switch(mNum)
         	{
         	case 0:
                 v = inflater.inflate(R.layout.electricity, container, false);
-                tv = v.findViewById(R.id.image1);
-                SmartImageView myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                wareTot = getWareHouseTotal(mNum);
+                officeTot = getOfficeTotal(mNum);
+                max = wareTot+officeTot;
                 
-                String imgUrl = "http://chart.apis.google.com/chart" +
-         			   "?chxt=y" +
-         			   "&chbh=a,0,5" +
-         			   "&chs=700x425" +
-         			   "&cht=bvg" +
-         			   "&chco=A2C180,3D7930,FF9900" +
-         			   "&chd=t:45.524,53.183,34.632|57.4,83.623,57.284|52.868,72.297,69.115" +
-         			   "&chtt=Vertical+bar+chart";
                 
-                myImage.setImageUrl(imgUrl);
-
+                imgUrl = "http://chart.apis.google.com/chart" +
+         			   "?chs=700x425" +
+         			   "&cht=p3" +
+         			   "&chco=336699|33CC33" +
+         			   "&chds=0,"+max+
+         			   "&chd=t:"+wareTot+","+officeTot+
+         			   "&chtt=Consumption+Totals";
+                
+                if(max!=0)
+                	myImage.setImageUrl(imgUrl);
+                else
+                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
                 return v;
         	case 1:
         		v = inflater.inflate(R.layout.propane, container, false);
-        		tv = v.findViewById(R.id.image2);
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                wareTot = getWareHouseTotal(mNum);
+                officeTot = getOfficeTotal(mNum);
+                max = wareTot+officeTot;
+                
+                imgUrl = "http://chart.apis.google.com/chart" +
+          			   "?chs=700x425" +
+          			   "&cht=p3" +
+          			   "&chco=336699|33CC33" +
+          			   "&chds=0,"+max+
+          			   "&chd=t:"+wareTot+","+officeTot+
+          			   "&chtt=Consumption+Totals";
+                
+                if(max!=0)
+                	myImage.setImageUrl(imgUrl);
+                else
+                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
                 return v;
         	case 2:
-        		v = inflater.inflate(R.layout.gasoline, container, false);
+        		v = inflater.inflate(R.layout.natural, container, false);
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                wareTot = getWareHouseTotal(mNum);
+                officeTot = getOfficeTotal(mNum);
+                max = wareTot+officeTot;
+                
+                
+                imgUrl = "http://chart.apis.google.com/chart" +
+         			   "?chs=700x425" +
+         			   "&cht=p3" +
+         			   "&chco=336699|33CC33" +
+         			   "&chds=0,"+max+
+         			   "&chd=t:"+wareTot+","+officeTot+
+         			   "&chtt=Consumption+Totals";
+                
+                if(max!=0)
+                	myImage.setImageUrl(imgUrl);
+                else
+                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
                 return v;
         	case 3:
-        		v = inflater.inflate(R.layout.natural, container, false);
+        		v = inflater.inflate(R.layout.gasoline, container, false);
+                myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                wareTot = getWareHouseTotal(mNum);
+                officeTot = getOfficeTotal(mNum);
+                max = wareTot+officeTot;
+                
+                
+                imgUrl = "http://chart.apis.google.com/chart" +
+         			   "?chs=700x425" +
+         			   "&cht=p3" +
+         			   "&chco=336699|33CC33" +
+         			   "&chds=0,"+max+
+         			   "&chd=t:"+wareTot+","+officeTot+
+         			   "&chtt=Consumption+Totals";
+                
+                if(max!=0)
+                	myImage.setImageUrl(imgUrl);
+                else
+                	Toast.makeText(getActivity(), "Not enough iformation", Toast.LENGTH_LONG).show();
                 return v;
         	}
         	return null;
