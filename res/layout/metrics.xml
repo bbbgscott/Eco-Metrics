@@ -1,26 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#a4c639"
+    android:background="#fff"
 >
-
-    <TextView
-        android:text="Metrics"
-        android:id="@+id/metricTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-		android:padding="5dip"
-		android:textSize="25dip"
-		android:textStyle="bold"
-		android:textColor="#444444"
-    ></TextView>
+    <com.bbmcsolutions.ecometrics.metrics
+		android:id="@+id/indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#ffeaeaea"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp" 
+	/> 
+	
+    <RelativeLayout 
+   		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:background="#ffeaeaea" 
+	> 
+    	<View 
+    		android:layout_width="fill_parent"
+    		android:layout_height="1px"
+    		android:layout_alignBottom="@+id/current"
+    		android:background="#ffbdbdbd" 
+    	/>
+   		<ImageView 
+   			android:id="@id/current"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/indicator_current"
+    		android:layout_centerInParent="true"
+    		android:layout_alignParentTop="true" 
+    	/>
+   		<!--  
+   		<TextView 
+    	android:id="@+id/text2" 
+    	android:text="hest" 
+    	android:layout_height="wrap_content" 
+    	android:layout_gravity="left" 
+    	android:layout_width="wrap_content" />
+    	-->
+   		
+    </RelativeLayout>
     
 	<android.support.v4.view.ViewPager
 	    android:layout_width="match_parent" 
 	    android:layout_height="match_parent" 
-	    android:id="@+id/awesomepager"
+	    android:layout_weight="1"
+	    android:id="@+id/viewPager"
 	/>
 </LinearLayout>

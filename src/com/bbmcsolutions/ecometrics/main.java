@@ -35,7 +35,8 @@ public class main extends Activity {
         final Button metricsButt = (Button) findViewById(R.id.metricsButt);
         metricsButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Intent myIntent = new Intent(v.getContext(), metrics.class);
+            	//Intent myIntent = new Intent(v.getContext(), metrics.class);
+            	Intent myIntent = new Intent(v.getContext(), metrics_indicator.class);
                 startActivityForResult(myIntent, 0);
             }
         });
