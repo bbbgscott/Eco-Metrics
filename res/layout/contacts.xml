@@ -11,17 +11,11 @@
         android:id="@+id/contactTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_gravity="center_horizontal|top"
-		android:paddingTop="52dip"
-		android:textColor="#000000"
-=======
         android:layout_gravity="top"
 		android:padding="5dip"
 		android:textSize="25dip"
 		android:textStyle="bold"
 		android:textColor="#444444"
->>>>>>> 21ff8393801df434543fbf7b7a0fef3b858b4187
     ></TextView>
      <TextView
         android:text="This is just a small portion of what is possible on EcoMetrics.net!\nContact us to find out more information on our full product features and how you can get started with EcoMetrics.\n\nContact us for a free demo!"

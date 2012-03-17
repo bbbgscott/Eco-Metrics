@@ -17,5 +17,6 @@
 		<activity android:name=".metrics" ></activity>
 		<activity android:name=".data" ></activity>
 		<activity android:name=".config" ></activity>
+		<activity android:name=".Alerts"></activity>
     </application>
 </manifest>

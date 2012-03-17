@@ -22,7 +22,7 @@ public class config extends Activity {
         startButt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Intent myIntent = new Intent(v.getContext(), data.class);
-                startActivityForResult(myIntent, 0);
+                startActivity(myIntent);
             }
         });
     }

@@ -13,7 +13,6 @@
         android:layout_marginTop="10dip"
         android:text="@string/chooseMetric"
     />
-    
     <Spinner
         android:prompt="@string/chooseMetric"
         android:id="@+id/metricSpinner"
@@ -30,7 +29,6 @@
         android:layout_marginTop="10dip"
         android:text="@string/chooseLocation"
     />
-    
     <Spinner
         android:prompt="@string/chooseLocation"
         android:id="@+id/locationSpinner"
@@ -47,7 +45,6 @@
         android:layout_marginTop="10dip"
         android:text="@string/chooseMonth"
     />
-    
     <Spinner
         android:prompt="@string/chooseMonth"
         android:id="@+id/monthSpinner"
@@ -57,5 +54,48 @@
 		android:padding="5dip"
 		android:textColor="#444444"
     />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/chooseConsumption"
+    />
+    <EditText
+        android:id="@+id/consumptionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+    />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/chooseCost"
+    />
+    <EditText
+        android:id="@+id/costEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+    />
+    
+    <Button
+		android:text="Save"
+		android:layout_height="wrap_content"
+		android:id="@+id/saveButton"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="20dip"
+		android:layout_marginRight="20dip"
+		android:layout_marginTop="30dip"
+		android:layout_marginBottom="0dip"
+		android:background="@layout/bluebuttonshape"
+		android:textColor="#FFFFFF"
+		android:padding="10dip"
+		android:textStyle="bold"
+		android:textSize="20dip"
+		>
+</Button>
 
 </LinearLayout>

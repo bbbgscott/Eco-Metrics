@@ -4,6 +4,7 @@ import com.bbmcsolutions.ecometrics.GridList;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -60,7 +63,24 @@ public class data extends Activity {
 	    monthSpinner.setAdapter(monthAdapter);
 	    
 	    monthSpinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
-	    	    
+	    
+	    final EditText consumptionEdit = (EditText) findViewById(R.id.consumptionEditText);
+	    
+	    final EditText costEdit = (EditText) findViewById(R.id.costEditText);
+	    
+	    Button saveButton = (Button) findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	/*Intent myIntent = new Intent(v.getContext(), metrics.class);
+                startActivityForResult(myIntent, 0);*/
+            	// Do something
+            	cons = Integer.parseInt(consumptionEdit.getText().toString());
+            	
+            	cost = Integer.parseInt(costEdit.getText().toString());
+            	
+            	Toast.makeText(getBaseContext(), "metric: " +met+", location: "+loc+", month: "+mon+", consumption: "+cons+", cost: "+cost, Toast.LENGTH_LONG).show();
+            }
+        });
 	}
 	
 	public class MyOnItemSelectedListener implements OnItemSelectedListener 
@@ -84,8 +104,8 @@ public class data extends Activity {
 			    		break;
 		    	}
 	    	}
-	    	if(met != "" && loc != "" && mon != "")
-	    		Toast.makeText(parent.getContext(), "The metric you chose is " +met+", your location is "+loc+", and your month is "+mon, Toast.LENGTH_LONG).show();
+	    	/*if(met != "" && loc != "" && mon != "")
+	    		Toast.makeText(parent.getContext(), "The metric you chose is " +met+", your location is "+loc+", and your month is "+mon, Toast.LENGTH_LONG).show();*/
 	    }
 
 	    public void onNothingSelected(AdapterView parent) {

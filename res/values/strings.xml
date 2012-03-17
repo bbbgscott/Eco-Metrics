@@ -33,4 +33,8 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+    
+    <string name="chooseConsumption">Enter your consumption</string>
+    
+    <string name="chooseCost">Enter your payment</string>
 </resources>
