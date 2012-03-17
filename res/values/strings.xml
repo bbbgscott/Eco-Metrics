@@ -7,9 +7,9 @@
     <string name="chooseMetric">Choose a metric</string>
     <string-array name="metricArray">
         <item>Electricity</item>
-        <item>Water</item>
-        <item>Garbage</item>
-        <item>Green House Gasses</item>
+        <item>Propane</item>
+        <item>Gasoline</item>
+        <item>Natural Gas</item>
     </string-array>
     
     <string name="chooseLocation">Choose a location</string>
@@ -34,10 +34,10 @@
         <item>December</item>
     </string-array>
     
-    <string name="chooseConsumption">Enter your consumption</string>
-    
-    <string name="chooseCost">Enter your payment</string>
-    
     <string name="preblurb">Save money.  Reduce risk.  Protect the environment.</string>
     <string name="blurb1">You\'re off to a great start tracking your resource usage!  Upgrade today to the full version of the Ecometrics sustainability software to easily track what your company consumes, spends, and emits with an intuitive interface, powerful planning tools, and flexible sustainability reporting.  Among other benefits, you\'ll gain instant access to:</string>
+	
+    <string name="chooseConsumption">Enter your consumption</string>
+    <string name="unit_label">Unit</string>
+    <string name="chooseCost">Enter your payment</string>
 </resources>

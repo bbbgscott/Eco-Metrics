@@ -1,10 +1,18 @@
 package com.bbmcsolutions.ecometrics;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.loopj.android.image.SmartImageView;
+
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +38,8 @@ public class metrics_indicator extends FragmentActivity {
     metrics mIndicator;
 	
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.metrics);
         
@@ -61,8 +71,9 @@ public class metrics_indicator extends FragmentActivity {
 		mIndicator.setArrows(prev, next);
 		
 		mIndicator.setOnClickListener(new OnIndicatorClickListener());
+		
     }
-    
+	
     class OnIndicatorClickListener implements metrics.OnClickListener{
 		public void onCurrentClicked(View v) {
 			Toast.makeText(metrics_indicator.this, "Hello", Toast.LENGTH_SHORT).show();
@@ -85,9 +96,7 @@ public class metrics_indicator extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int pos) {
-			Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.DAY_OF_MONTH, pos - getCount() / 2);
-			return ArrayListFragment.newInstance(pos+1);
+			return ArrayListFragment.newInstance(pos);
 		}
 
 		@Override
@@ -100,55 +109,7 @@ public class metrics_indicator extends FragmentActivity {
 		return ListItems[pos];
 		}
     }
-    /*
-    public static class ItemFragment extends ListFragment{
-    	Date date;
-    	
-    	static ItemFragment newInstance(Date date) 
-    	{
-    		ItemFragment f = new ItemFragment();
-
-            // Supply num input as an argument.
-            Bundle args = new Bundle();
-            args.putString("date", sdf.format(date));
-            f.setArguments(args);
-
-            return f;
-        }
-    	
-    	@Override
-    	public void onCreate(Bundle savedInstanceState) {
-    		super.onCreate(savedInstanceState);
-    		try {
-				this.date = sdf.parse(getArguments().getString("date"));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-    	}
-    	
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View v = inflater.inflate(R.layout.date_fragment, container, false);
-            View tv = v.findViewById(R.id.text);
-            ((TextView)tv).setText(readableDateFormat.format(date));
-            return v;
-        }
-
-        @Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-            Toast.makeText(getActivity(), "Hello", Toast.LENGTH_SHORT).show();
-            //setListAdapter(new ArrayAdapter<String>(getActivity(),
-            //android.R.layout.simple_list_item_1, list));
-        }
-
-        @Override
-        public void onListItemClick(ListView l, View v, int position, long id) {
-            Log.i("FragmentList", "Item clicked: " + id);
-        }
-    }
-    */
+    
     public static class ArrayListFragment extends ListFragment 
     {
         int mNum;
@@ -173,6 +134,7 @@ public class metrics_indicator extends FragmentActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             mNum = getArguments() != null ? getArguments().getInt("num") : 1;
+            Toast.makeText(getActivity(), "mNum = "+mNum, Toast.LENGTH_SHORT).show();
         }
 
         /**
@@ -184,52 +146,51 @@ public class metrics_indicator extends FragmentActivity {
                 Bundle savedInstanceState) {
         	View v;
         	View tv;
+        	ImageView imgView;
         	
         	switch(mNum)
         	{
         	case 0:
-                v = inflater.inflate(R.layout.fragment_pager_list, container, false);
-                tv = v.findViewById(R.id.text);
-                ((TextView)tv).setText("Fragment #" + mNum);
+                v = inflater.inflate(R.layout.electricity, container, false);
+                tv = v.findViewById(R.id.image1);
+                SmartImageView myImage = (SmartImageView) v.findViewById(R.id.my_image);
+                
+                String imgUrl = "http://chart.apis.google.com/chart" +
+         			   "?chxt=y" +
+         			   "&chbh=a,0,5" +
+         			   "&chs=700x425" +
+         			   "&cht=bvg" +
+         			   "&chco=A2C180,3D7930,FF9900" +
+         			   "&chd=t:45.524,53.183,34.632|57.4,83.623,57.284|52.868,72.297,69.115" +
+         			   "&chtt=Vertical+bar+chart";
+                
+                myImage.setImageUrl(imgUrl);
+
                 return v;
         	case 1:
-        		v = inflater.inflate(R.layout.fragment_pager_list, container, false);
-                tv = v.findViewById(R.id.text);
-                ((TextView)tv).setText("Fragment #" + mNum);
+        		v = inflater.inflate(R.layout.propane, container, false);
+        		tv = v.findViewById(R.id.image2);
                 return v;
         	case 2:
-        		v = inflater.inflate(R.layout.fragment_pager_list, container, false);
-                tv = v.findViewById(R.id.text);
-                ((TextView)tv).setText("Fragment #" + mNum);
+        		v = inflater.inflate(R.layout.gasoline, container, false);
                 return v;
         	case 3:
-        		v = inflater.inflate(R.layout.fragment_pager_list, container, false);
-                tv = v.findViewById(R.id.text);
-                ((TextView)tv).setText("Fragment #" + mNum);
+        		v = inflater.inflate(R.layout.natural, container, false);
                 return v;
         	}
-        	/*
-            View v = inflater.inflate(R.layout.fragment_pager_list, container, false);
-            View tv = v.findViewById(R.id.text);
-            ((TextView)tv).setText("Fragment #" + mNum);
-            return v;*/
         	return null;
         }
-
+        
         @Override
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            setListAdapter(new ArrayAdapter<String>(getActivity(),
-                    android.R.layout.simple_list_item_1, list));
+            /*setListAdapter(new ArrayAdapter<String>(getActivity(),
+                    android.R.layout.simple_list_item_1, list));*/
         }
 
         @Override
         public void onListItemClick(ListView l, View v, int position, long id) {
             Log.i("FragmentList", "Item clicked: " + id);
         }
-
-    }
-
-    
-    public static final String[] list = new String[]{"France", "London", "Sweden", "Denmark", "Germany", "Finland", "Thailand", "Taiwan", "USA", "Norway", "Denmark (again)", "Lithuania", "Bosnia", "Russia", "Vietnam", "Australia"};
+    }    
 }

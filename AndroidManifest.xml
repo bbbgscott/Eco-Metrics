@@ -20,4 +20,5 @@
 		<activity android:name=".config" ></activity>
 		<activity android:name=".Alerts"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
