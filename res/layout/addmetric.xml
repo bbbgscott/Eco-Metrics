@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  >
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Metric Location"
+  />
+  <EditText
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:id="@+id/txtLoc"
+  android:autoText="false"
+  />
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Metric Value"
+  
+  />
+  <EditText
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:id="@+id/txtVal"
+  android:inputType="number"
+  android:digits="0123456789"
+  android:singleLine="true"
+  />
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Metric Type"
+  
+  />
+  <Spinner
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:id="@+id/spinType"
+  />
+  <Button
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/btnAdd"
+  android:text="Add Metric"
+  android:onClick="btnAddEmp_Click"
+  />
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Number of metrics "
+  android:id="@+id/txtMetrics"
+  />
+</LinearLayout>
