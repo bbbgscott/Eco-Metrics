@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF" 
-    >
-    
+    android:background="#a4c639"
+>
+
     <TextView
         android:text="Metrics"
         android:id="@+id/metricTitle"
@@ -18,5 +18,9 @@
 		android:textColor="#444444"
     ></TextView>
     
-
+	<android.support.v4.view.ViewPager
+	    android:layout_width="match_parent" 
+	    android:layout_height="match_parent" 
+	    android:id="@+id/awesomepager"
+	/>
 </LinearLayout>

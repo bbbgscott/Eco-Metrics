@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/ScrollViewTipsLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -16,51 +22,90 @@
 		android:textSize="25dip"
 		android:textStyle="bold"
 		android:textColor="#444444"
-    ></TextView>
-     <TextView
-        android:text="This is just a small portion of what is possible on EcoMetrics.net!\nContact us to find out more information on our full product features and how you can get started with EcoMetrics.\n\nContact us for a free demo!"
-        android:id="@+id/contactBlurb"
+    />
+    <TextView 
+        android:text="@string/preblurb"
+        android:id="@+id/preblurb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-		android:padding="25dip"
+		android:paddingTop="10dip"
+		android:paddingLeft="25dip"
+		android:paddingRight="25dip"
+		android:textSize="20dip"
+		android:textStyle="bold"
+		android:textColor="#444444"
+    />
+    <TextView
+		android:text="@string/blurb1"
+        android:id="@+id/blurb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+		android:paddingTop="15dip"
+		android:paddingLeft="25dip"
+		android:paddingRight="25dip"
+		android:paddingBottom="15dip"
 		android:textSize="15dip"
 		android:textColor="#444444"
     ></TextView>   
-    <TextView
-        android:text="P.O. Box 1135\nCapitola, CA 95010"
-        android:id="@+id/contactAddress"
-        android:layout_width="match_parent"
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-		android:padding="15dip"
-		android:layout_marginLeft="80dip"
-		android:layout_marginRight="80dip"
-		android:textSize="15dip"
-		android:textStyle="bold"
-		android:textColor="#444444"
-		android:background="#EEEEEE"
-		
-    ></TextView>
-    <TextView
-        android:text="(831) 824-4102 "
-        android:id="@+id/contactAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-		android:paddingBottom="15dip"
-		android:paddingLeft="15dip"
-		android:layout_marginLeft="80dip"
-		android:layout_marginRight="80dip"
-		android:textSize="15dip"
-		android:textStyle="bold"
-		android:textColor="#444444"
-		android:background="#EEEEEE"
-		android:autoLink="phone"
-		
-    ></TextView>    
+        android:gravity="top|center" >
+
+        <TableRow android:gravity="center" >
+    
+            <TextView
+                android:layout_column="1"
+                android:text="•"
+                android:gravity="center"
+        		android:textColor="#000"></TextView>
+            <TextView
+                android:layout_column="2"
+                android:layout_width="wrap_content"
+                android:text="Track more metrics"
+        		android:textColor="#000"></TextView>
+        </TableRow>
+        <TableRow>    
+            <TextView
+                android:layout_column="1"
+                android:text="•"
+        		android:textColor="#000"></TextView>
+            <TextView
+                android:layout_column="2"
+                android:layout_width="wrap_content"
+                android:text="View your carbon footprint"
+        		android:textColor="#000"></TextView>
+        </TableRow>
+        <TableRow>    
+            <TextView
+                android:layout_column="1"
+                android:text="•"
+        		android:textColor="#000"></TextView>
+            <TextView
+                android:layout_column="2"
+                android:layout_width="wrap_content"
+                android:text="Plan for the future"
+        		android:textColor="#000"></TextView>
+        </TableRow>
+        <TableRow>    
+            <TextView
+                android:layout_column="1"
+                android:text="•"
+        		android:textColor="#000"></TextView>
+            <TextView
+                android:layout_column="2"
+                android:layout_width="wrap_content"
+                android:text="Benchmark your progress"
+        		android:textColor="#000"></TextView>
+        </TableRow>
+	</TableLayout>
     <Button 
-		android:text="Visit EcoMetrics.net"
+		android:text="Tour EcoMetrics.net"
 		android:layout_height="wrap_content"
 		android:id="@+id/urlButt"
 		android:layout_width="match_parent"
@@ -73,10 +118,10 @@
 		android:padding="10dip"
 		android:textStyle="bold"
 		android:textSize="20dip"		
-		>
-</Button>
+	/>
     
     <TextView android:gravity="center_horizontal|bottom" android:padding="10dip" android:text="@string/copyright" android:id="@+id/textView1" android:layout_width="match_parent" android:layout_height="match_parent"></TextView>
     
 
 </LinearLayout>
+</ScrollView>

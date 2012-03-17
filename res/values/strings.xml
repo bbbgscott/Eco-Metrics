@@ -37,4 +37,7 @@
     <string name="chooseConsumption">Enter your consumption</string>
     
     <string name="chooseCost">Enter your payment</string>
+    
+    <string name="preblurb">Save money.  Reduce risk.  Protect the environment.</string>
+    <string name="blurb1">You\'re off to a great start tracking your resource usage!  Upgrade today to the full version of the Ecometrics sustainability software to easily track what your company consumes, spends, and emits with an intuitive interface, powerful planning tools, and flexible sustainability reporting.  Among other benefits, you\'ll gain instant access to:</string>
 </resources>

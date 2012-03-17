@@ -23,7 +23,7 @@ public class contacts extends Activity {
         linkButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                        
-            	Intent myIntent = new Intent( Intent.ACTION_VIEW , Uri.parse( "http://www.eco-metrics.net" ) );
+            	Intent myIntent = new Intent( Intent.ACTION_VIEW , Uri.parse( "http://www.eco-metrics.net/tour" ) );
                 startActivity( myIntent );
 
             }
