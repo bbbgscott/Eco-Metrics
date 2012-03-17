@@ -74,9 +74,9 @@ public class data extends Activity {
             	/*Intent myIntent = new Intent(v.getContext(), metrics.class);
                 startActivityForResult(myIntent, 0);*/
             	// Do something
-            	cons = Integer.parseInt(consumptionEdit.getText().toString());
+            	cons = Double.parseDouble(consumptionEdit.getText().toString());
             	
-            	cost = Integer.parseInt(costEdit.getText().toString());
+            	cost = Double.parseDouble(costEdit.getText().toString());
             	
             	Toast.makeText(getBaseContext(), "metric: " +met+", location: "+loc+", month: "+mon+", consumption: "+cons+", cost: "+cost, Toast.LENGTH_LONG).show();
             }
